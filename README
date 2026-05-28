@@ -9,3 +9,7 @@ pip install python-jose
 
 
 git init
+
+git add . 
+
+git branch -M main

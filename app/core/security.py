@@ -24,7 +24,7 @@ def verify_password(password:str, hash_password:str):
 
 def create_access_token(data:dict):
     to_encode = data.copy()
-    expire = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=config.ACCESS_TOKEN_EXPIRE_MINUTES)
+    expire = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=int(config.ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp":expire})
-    encoded_jwt = jwt.encode(to_encode, config.SECRET_KEY, config.ALGORITHM)
+    encoded_jwt = jwt.encode(to_encode, config.SECRET_KEY)
     return encoded_jwt
