@@ -17,7 +17,7 @@ router = APIRouter(prefix="/orders")
 @router.post("/order")
 def create_order(order:OrderCreate, db:Session=Depends(get_db),current_user=Depends(get_current_user)):
     try:
-        return create_new_order(db,order, current_user)
+        return create_new_order(db,order, current_user.id)
     except ValueError as error:
         raise HTTPException(status_code=400,
                             detail=str(error))
