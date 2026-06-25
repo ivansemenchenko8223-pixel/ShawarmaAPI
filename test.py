@@ -10,7 +10,7 @@ import random
 import string
 
 # Базовый URL API (измените при необходимости)
-BASE_URL = "http://localhost:9000/api/v1"
+BASE_URL = "http://localhost:1000/api/v1"
 
 def random_string(length=8):
     """Генерирует случайную строку из букв и цифр."""

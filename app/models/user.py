@@ -12,9 +12,14 @@ class User(Base):
     username = Column(String, nullable=False)
     hashed_password = Column(String, nullable=False)
     is_active = Column(Boolean, default=True)
+    is_admin = Column(Boolean, default=False)
     created_at = Column(DateTime(timezone=True), default=datetime.now())
 
+
     orders = relationship("app.models.order.Order", back_populates="user")
+
+
+
     
     
     
